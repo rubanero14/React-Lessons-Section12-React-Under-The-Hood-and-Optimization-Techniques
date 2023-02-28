@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Button from "./components/UI/Button/Button";
 
+import DemoOutput from "./components/Demo/DemoOutput";
+
 import "./App.css";
 
 function App() {
   const [paragraphIsVisible, setParagraphIsVisible] = useState(false);
 
-  console.log("APP IS RUNNING...");
+  console.log("App RUNNING");
 
   // This is shorthand for toggling or inversing previous state. equivalent to `return paragraphIsVisible = !paragraphIsVisible`;
   const toggleParagraphVisible = () => {
@@ -19,9 +21,9 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      {paragraphIsVisible && <p>Paragraph is visible!</p>}
+      <DemoOutput show={paragraphIsVisible} />
       <Button onClick={toggleParagraphVisible}>
-        {paragraphIsVisible ? "Hide" : "Show"} Paragraph
+        Set {paragraphIsVisible ? "No Show" : "Showtime"}
       </Button>
     </div>
   );
