@@ -34,8 +34,10 @@ function App() {
     <div className="app">
       <h1>Hi there!</h1>
       <DemoOutput show={paragraphIsVisible} />
-      <Button onClick={enableToggle}>Enable Toogle Switch</Button>
-      <Button onClick={toggleParagraphVisible}>
+      <Button onClick={enableToggle} disabled={allowToggle}>
+        Enable Toogle Switch
+      </Button>
+      <Button onClick={toggleParagraphVisible} disabled={!allowToggle}>
         Set {paragraphIsVisible ? "No Show" : "Showtime"}
       </Button>
     </div>
